@@ -5,9 +5,7 @@ import React from "react";
 function Header() {
   return (
     <AppBar position="static">
-      <Toolbar>
-       
-      </Toolbar>
+      <Toolbar />
     </AppBar>
   );
 }
