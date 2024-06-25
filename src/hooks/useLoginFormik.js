@@ -24,7 +24,6 @@ const useLoginFormik = () => {
     validationSchema,
     onSubmit: async (values, { setSubmitting }) => {
       try {
-        // Assuming mockApiCall is defined elsewhere and imported
         const user = await mockApiCall(values);
         dispatch(login(user));
         navigate("/");

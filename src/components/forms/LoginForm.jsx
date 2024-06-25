@@ -21,11 +21,30 @@ function LoginForm() {
     <Container maxWidth="sm">
       <Box sx={{ mt: 8 }}>
         <Typography variant="h5" component="h1" gutterBottom>
-          Please enter your email address and password to access your account
+          <strong>
+            Please enter your email address and password to access your account
+          </strong>
         </Typography>
         <form onSubmit={formik.handleSubmit}>
           <LoginFormFields formik={formik} />
-          <Button color="primary" variant="contained" fullWidth type="submit">
+          <Typography
+            variant="p"
+            component="p"
+            gutterBottom
+            color="blue"
+            sx={{ fontSize: "14px", mb: "1.5rem", textDecoration: "none" }}
+          >
+            <strong>
+              <a href="/login">Forgot Password?</a>
+            </strong>
+          </Typography>
+          <Button
+            color="primary"
+            variant="contained"
+            fullWidth
+            type="submit"
+            sx={{ width: "8rem", borderRadius: "10px" }}
+          >
             Sign In
           </Button>
         </form>
