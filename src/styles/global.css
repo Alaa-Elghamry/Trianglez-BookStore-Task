@@ -103,6 +103,7 @@ section {
 }
 body {
   line-height: 1;
+  background-color: rgb(233, 245, 249);
 }
 ol,
 ul {

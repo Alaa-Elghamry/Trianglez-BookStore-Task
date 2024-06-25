@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import useLoginFormik from "../../hooks/useLoginFormik";
 import LoginFormFields from "./LoginFormFields";
+import logo from "../../assets/images/logo.jpg";
 
 function LoginForm() {
   const formik = useLoginFormik();
@@ -19,7 +20,7 @@ function LoginForm() {
 
   return (
     <Container maxWidth="sm">
-      <Box sx={{ mt: 8 }}>
+      <Box sx={{ margin: "0 auto", padding: { sm: 1, md: 2, lg: 4 } }}>
         <Typography variant="h5" component="h1" gutterBottom>
           <strong>
             Please enter your email address and password to access your account
@@ -43,10 +44,13 @@ function LoginForm() {
             variant="contained"
             fullWidth
             type="submit"
-            sx={{ width: "8rem", borderRadius: "10px" }}
+            sx={{ width: "8rem", borderRadius: "10px", mb: 2 }}
           >
             Sign In
           </Button>
+          <Box>
+            <img src={logo} alt="logo" />
+          </Box>
         </form>
       </Box>
     </Container>
