@@ -21,7 +21,7 @@ function LoginForm() {
   return (
     <Container maxWidth="sm">
       <Box sx={{ margin: "0 auto", padding: { sm: 1, md: 2, lg: 4 } }}>
-        <Typography variant="h5" component="h1" gutterBottom>
+        <Typography variant="h5" component="h1" gutterBottom sx={{ mb: 2 }}>
           <strong>
             Please enter your email address and password to access your account
           </strong>
