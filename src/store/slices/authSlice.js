@@ -5,7 +5,7 @@ const userFromLocalStorage = JSON.parse(localStorage.getItem("user"));
 const authSlice = createSlice({
   name: "auth",
   initialState: {
-    isAuthenticated: false,
+    isAuthenticated: !!userFromLocalStorage,
     user: userFromLocalStorage,
   },
   reducers: {

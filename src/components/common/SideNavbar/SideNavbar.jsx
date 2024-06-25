@@ -1,7 +1,7 @@
 import { Stack } from "@mui/material";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import NotificationsIcon from "@mui/icons-material/Notifications";
+import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
 import logo from "../../../assets/images/logo.jpg";
 
 function SideNavbar() {
@@ -26,21 +26,24 @@ function SideNavbar() {
         <Stack
           direction="row"
           alignItems="center"
-          p="10px"
+          p="15px"
           px="15px"
           sx={{
-            bgcolor: "#2F80ED",
+            bgcolor: "rgb(233, 245, 249)",
+            color: "black",
+            borderRight: "3px solid rgb(137, 93, 110)",
           }}
           onClick={handleChange}
         >
-          <NotificationsIcon />
+          <LibraryBooksIcon />
           <NavLink
             to="/"
             style={{
-              fontSize: "14px",
+              fontSize: "16px",
+              fontFamily: "inter",
+              fontWeight: "600",
               textDecoration: "none",
-              color: "white",
-              marginInlineStart: "15px",
+              marginInlineStart: "20px",
             }}
           >
             Books
