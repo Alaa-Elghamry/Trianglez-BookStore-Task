@@ -84,7 +84,7 @@ export default function useBooks(searchTerm, currentPage) {
       version: "1.1",
     },
   ]);
-  const booksPerPage = 10;
+  const booksPerPage = 8;
 
   useEffect(() => {
     // fetch books from an API or perform other side effects here
