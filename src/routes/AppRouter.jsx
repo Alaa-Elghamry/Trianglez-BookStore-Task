@@ -13,6 +13,7 @@ import Error from "../pages/Error";
 import Login from "../pages/Login";
 import AddBookPage from "../pages/AddBookPage";
 import BookDetails from "../pages/BookDetails";
+import EditBook from "../components/EditBook/EditBook";
 
 function ProtectedRoute({ children }) {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
@@ -56,6 +57,14 @@ const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <BookDetails />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/edit-book/:bookId",
+        element: (
+          <ProtectedRoute>
+            <EditBook />
           </ProtectedRoute>
         ),
       },

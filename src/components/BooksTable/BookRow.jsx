@@ -20,6 +20,9 @@ function BookRow({ book }) {
   const handleViewDetails = () => {
     navigate(`/book-details/${book.id}`);
   };
+  const handleEditBook = () => {
+    navigate(`/edit-book/${book.id}`);
+  };
   return (
     <>
       <TableRow>
@@ -32,7 +35,7 @@ function BookRow({ book }) {
           <IconButton onClick={handleViewDetails}>
             <Visibility sx={{ color: "blue" }} />
           </IconButton>
-          <IconButton>
+          <IconButton onClick={handleEditBook}>
             <Edit sx={{ color: "green" }} />
           </IconButton>
           <IconButton onClick={() => setOpenModal(true)}>

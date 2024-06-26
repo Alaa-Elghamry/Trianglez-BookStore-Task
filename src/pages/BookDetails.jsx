@@ -34,26 +34,19 @@ function BookDetails() {
                 style={{ width: "100%", borderRadius: "10px" }}
               />
             </Grid>
-            <Grid item xs={12} md={8}>
+            <Grid item xs={12} md={5}>
               <Typography variant="h4">{book.title}</Typography>
-              <Typography variant="subtitle1">
-                By {book.author} | {book.date}
-              </Typography>
-              <Typography variant="h6">${book.price}</Typography>
-              <Typography variant="body1">ISBN: {book.isbn}</Typography>
-              <Typography variant="body1">Version: {book.version}</Typography>
-              <Typography variant="body1">Category: {book.category}</Typography>
               <Typography variant="body1">Pages: {book.pages}</Typography>
               <Typography variant="body1">
                 Time to read: {book.readTime}
               </Typography>
-              <Typography variant="body2" sx={{ marginTop: "20px" }}>
-                {book.brief}
-              </Typography>
+            </Grid>
+            <Grid item xs={12} md={3}>
               <Box
                 sx={{
                   display: "flex",
-                  justifyContent: "space-between",
+                  justifyContent: "flex-end",
+                  gap: "20px",
                   marginTop: "20px",
                 }}
               >
@@ -72,6 +65,34 @@ function BookDetails() {
                   Delete
                 </Button>
               </Box>
+            </Grid>
+            <Grid item xs={12} md={6} gap={2}>
+              <Typography variant="subtitle1">
+                By {book.author} | {book.date}
+              </Typography>
+              <Typography variant="h6">${book.price}</Typography>
+              <Typography variant="body1">ISBN: {book.isbn}</Typography>
+              <Typography variant="body1">Version: {book.version}</Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  backgroundColor: "lightgray",
+                  borderRadius: "10px",
+                  padding: "10px",
+                  width: "max-content",
+                  marginTop: "5px",
+                }}
+              >
+                Category: {book.category}
+              </Typography>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Typography variant="body2" sx={{ marginTop: "20px" }}>
+                Book brief goes here
+              </Typography>
+              <Typography variant="body2" sx={{ marginTop: "20px" }}>
+                {book.brief}
+              </Typography>
             </Grid>
           </Grid>
         </Paper>
