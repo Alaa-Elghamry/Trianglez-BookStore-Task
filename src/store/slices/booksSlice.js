@@ -1,5 +1,6 @@
 // features/books/booksSlice.js
 import { createSlice } from "@reduxjs/toolkit";
+import logo from "../../assets/images/logo.jpg";
 
 const booksSlice = createSlice({
   name: "books",
@@ -11,6 +12,7 @@ const booksSlice = createSlice({
       author: "Author 1",
       isbn: "111111",
       version: "1.0",
+      coverPhoto: logo,
     },
     {
       id: 2,
@@ -19,6 +21,7 @@ const booksSlice = createSlice({
       author: "Author 2",
       isbn: "222222",
       version: "2.0",
+      coverPhoto: logo,
     },
     {
       id: 3,
@@ -27,6 +30,7 @@ const booksSlice = createSlice({
       author: "Author 3",
       isbn: "333333",
       version: "1.1",
+      coverPhoto: logo,
     },
     {
       id: 4,
@@ -35,6 +39,7 @@ const booksSlice = createSlice({
       author: "Author 1",
       isbn: "111111",
       version: "1.0",
+      coverPhoto: logo,
     },
     {
       id: 5,
@@ -43,6 +48,7 @@ const booksSlice = createSlice({
       author: "Author 2",
       isbn: "222222",
       version: "2.0",
+      coverPhoto: logo,
     },
     {
       id: 6,
@@ -51,6 +57,7 @@ const booksSlice = createSlice({
       author: "Author 3",
       isbn: "333333",
       version: "1.1",
+      coverPhoto: logo,
     },
     {
       id: 7,
@@ -59,6 +66,7 @@ const booksSlice = createSlice({
       author: "Author 1",
       isbn: "111111",
       version: "1.0",
+      coverPhoto: logo,
     },
     {
       id: 8,
@@ -67,6 +75,7 @@ const booksSlice = createSlice({
       author: "Author 2",
       isbn: "222222",
       version: "2.0",
+      coverPhoto: logo,
     },
     {
       id: 9,
@@ -75,6 +84,7 @@ const booksSlice = createSlice({
       author: "Author 3",
       isbn: "333333",
       version: "1.1",
+      coverPhoto: logo,
     },
     {
       id: 10,
@@ -83,6 +93,7 @@ const booksSlice = createSlice({
       author: "Author 3",
       isbn: "333333",
       version: "1.1",
+      coverPhoto: logo,
     },
   ],
   reducers: {

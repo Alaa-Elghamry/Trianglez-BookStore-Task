@@ -1,29 +1,51 @@
 // BookRow.jsx
-import React from "react";
+import React, { useState } from "react";
 import { TableRow, TableCell, IconButton } from "@mui/material";
 import { Visibility, Edit, Delete } from "@mui/icons-material";
-import { handleView, handleEdit, handleDelete } from "./bookActions";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { deleteBook } from "../../store/slices/booksSlice";
+import ConfirmationModal from "../Modals/ConfirmationModal";
 
 function BookRow({ book }) {
+  const [openModal, setOpenModal] = useState(false);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleDeleteConfirm = () => {
+    dispatch(deleteBook(book.id));
+    setOpenModal(false);
+  };
+
+  const handleViewDetails = () => {
+    navigate(`/book-details/${book.id}`);
+  };
   return (
-    <TableRow>
-      <TableCell>{book.title}</TableCell>
-      <TableCell>{book.category}</TableCell>
-      <TableCell>{book.author}</TableCell>
-      <TableCell>{book.isbn}</TableCell>
-      <TableCell>{book.version}</TableCell>
-      <TableCell>
-        <IconButton onClick={() => handleView(book.id)}>
-          <Visibility sx={{ color: "blue" }} />
-        </IconButton>
-        <IconButton onClick={() => handleEdit(book.id)}>
-          <Edit sx={{ color: "green" }} />
-        </IconButton>
-        <IconButton onClick={() => handleDelete(book.id)}>
-          <Delete sx={{ color: "darkRed" }} />
-        </IconButton>
-      </TableCell>
-    </TableRow>
+    <>
+      <TableRow>
+        <TableCell>{book.title}</TableCell>
+        <TableCell>{book.category}</TableCell>
+        <TableCell>{book.author}</TableCell>
+        <TableCell>{book.isbn}</TableCell>
+        <TableCell>{book.version}</TableCell>
+        <TableCell>
+          <IconButton onClick={handleViewDetails}>
+            <Visibility sx={{ color: "blue" }} />
+          </IconButton>
+          <IconButton>
+            <Edit sx={{ color: "green" }} />
+          </IconButton>
+          <IconButton onClick={() => setOpenModal(true)}>
+            <Delete sx={{ color: "darkRed" }} />
+          </IconButton>
+        </TableCell>
+      </TableRow>
+      <ConfirmationModal
+        open={openModal}
+        onClose={() => setOpenModal(false)}
+        onConfirm={handleDeleteConfirm}
+      />
+    </>
   );
 }
 

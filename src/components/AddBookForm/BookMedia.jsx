@@ -46,6 +46,7 @@ function BookMedia({ formik }) {
           <input
             type="file"
             name="coverPhoto"
+            value={formik.values.coverPhoto}
             hidden
             onChange={handleFileChange}
             accept="image/*"

@@ -34,6 +34,7 @@ const useBookForm = () => {
           category: values.category,
           isbn: values.isbn,
           version: values.version,
+          coverPhoto: values.coverPhoto,
         }),
       );
       setSubmitting(false);
