@@ -11,6 +11,7 @@ import MainLayout from "../layouts/MainLayout/MainLayout";
 import Home from "../pages/Home";
 import Error from "../pages/Error";
 import Login from "../pages/Login";
+import AddBookPage from "../pages/AddBookPage";
 
 function ProtectedRoute({ children }) {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
@@ -38,6 +39,14 @@ const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <Home />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/add-book",
+        element: (
+          <ProtectedRoute>
+            <AddBookPage />
           </ProtectedRoute>
         ),
       },

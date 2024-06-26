@@ -1,11 +1,12 @@
 import { Stack } from "@mui/material";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
 import logo from "../../../assets/images/logo.jpg";
 
 function SideNavbar() {
   const [isExpanded, setExpanded] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = () => {
     setExpanded(!isExpanded);
@@ -13,7 +14,18 @@ function SideNavbar() {
 
   return (
     <Stack width="100%" minHeight="100vh" direction="column">
-      <Stack alignContent="center" width={130} p={1} margin="0 auto">
+      <Stack
+        sx={{
+          margin: " 0 auto",
+          cursor: "pointer",
+          width: "130px",
+          padding: "10px",
+          alignContent: "center",
+        }}
+        onClick={() => {
+          navigate("/");
+        }}
+      >
         <img src={logo} loading="lazy" width="100%" alt="" />
       </Stack>
       <Stack
